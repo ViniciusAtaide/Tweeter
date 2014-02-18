@@ -1,0 +1,13 @@
+!!!
+%html
+  %head
+    %title Tweeter
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  %body
+    -flash.each do |name, msg|
+      -if msg.class == Array
+        -msg.each do |message|
+          =content_tag :div, message, id: "flash_#{name}"
+    = yield

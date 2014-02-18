@@ -1,0 +1,6 @@
+%li= post.title
+%li= post.content
+%li= link_to post.user.email, user_path(@user)
+%li= link_to 'Show', post
+%li= link_to 'Edit', edit_post_path(post)
+%li= link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
